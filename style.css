@@ -1,0 +1,306 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Fira Sans', sans-serif;
+}
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+    background-color: #29303f;
+}
+
+h1 {
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+a {
+    color: #fff;
+    font-size: 1.2rem;
+    text-decoration: none;
+}
+
+[class*="col-"] {
+    float: left;
+    padding: 10px;
+}
+
+[class*="col-"] {
+    width: 100%;
+}
+
+.navbar {
+    background-color: #40868b;
+    padding: 1% 7%;
+    text-align: center;
+}
+
+.navbar h1 {
+    color: #fff;
+    margin: 0;
+    padding-top: 10px;
+}
+
+.navbar h1 span {
+    font-weight: bolder;
+    background: linear-gradient(to left, #9C0F48, sandybrown);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -ms-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -ms-text-fill-color: transparent;
+    animation: anim 2s linear infinite;
+}
+
+@keyframes anim {
+    100% {
+        background: linear-gradient(to right, #9C0F48, sandybrown);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -ms-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        -ms-text-fill-color: transparent;
+    }
+}
+
+.nav-links {
+    display: flex;
+    flex-direction: column;
+    text-transform: uppercase;
+}
+
+.nav-links a {
+    background-color: #0c6168;
+    border-radius: 10px;
+    margin: 7px 0;
+    padding: 10px;
+}
+
+.nav-links a:hover {
+    background-color: #777;
+}
+
+.navbar::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.greetings {
+    background-color: transparent;
+    width: 100%;
+    height: auto;
+    margin-top: 0;
+}
+
+.greetings .tite h1 {
+    font-size: 4rem;
+    font-family: 'Tangerine', serif;
+    text-shadow: 4px 4px 4px #aaa;
+    font-weight: bold;
+    padding: 30px 20px;
+    text-align: center;
+    background: url(./pics/animback.gif);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -ms-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -ms-text-fill-color: transparent;
+}
+
+.greet {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.greet #buttons {
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    display: flex;
+    width: 100px;
+    height: 150px;
+    background: #1e1e1e;
+    border-radius: 7px;
+    position: relative;
+    overflow: hidden;
+}
+
+.greetings .greet button {
+    width: 70px;
+    height: 30px;
+    background: #777;
+    color: beige;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    border: none;
+    outline: none;
+    transition: 0.3s all ease;
+    transform: scaleX(1);
+    z-index: 7;
+}
+
+.greetings .greet button:last-child {
+    margin-bottom: 0;
+}
+
+.greetings .greet button:hover {
+    background: sandybrown;
+    color: #000;
+    opacity: 0.9;
+    transform: scaleX(0.8);
+}
+
+.greet #buttons::before {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 200px;
+    left: 25px;
+    background: linear-gradient(#f32424, #3ec70b, #ff00e0, #14ffe9);
+    animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.greet #buttons::after {
+    content: '';
+    position: absolute;
+    inset: 3px;
+    border-radius: 7px;
+    background: #29303f;
+}
+
+.greetings::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.last {
+    background-color: transparent;
+    width: 100%;
+    height: 400px;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.last .instruct {
+    width: 100%;
+    height: auto;
+    position: relative;
+    overflow: auto;
+}
+
+.accordion {
+    background-color: transparent;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%);
+    border-radius: 7px;
+    color: beige;
+    cursor: pointer;
+    padding: 25px 15px;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+}
+
+.accordion.active,
+.accordion:hover {
+    background: linear-gradient(to bottom, #FCD900, green);
+    color: #000;
+    opacity: 0.8;
+}
+
+.accordion:after {
+    content: '\002B';
+    color: #29303f;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+.accordion.active:after {
+    content: "\2212";
+}
+
+.panel {
+    padding: 0 18px;
+    background-color: #00000080;
+    color: #FCD90080;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+.panel p {
+    padding-bottom: 20px;
+}
+
+.panel p span {
+    color: aqua;
+    opacity: 0.7;
+}
+
+.panel p b i {
+    color: green;
+    opacity: 0.8;
+}
+
+.last .camel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    mix-blend-mode: hard-light;
+    margin-top: 30px;
+}
+
+.last .camel img {
+    width: 270px;
+}
+
+.last .footer {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 5px;
+    mix-blend-mode: hard-light;
+}
+
+.last .footer p {
+    padding-right: 10px;
+    font-family: 'Tangerine', serif;
+    color: beige;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.last .footer p span {
+    font-weight: bold;
+    background: linear-gradient(to left, #9C0F48, sandybrown);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -ms-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -ms-text-fill-color: transparent;
+    animation: anim 2s linear infinite;
+}
+
+.last::after {
+    content: "";
+    clear: both;
+    display: table;
+}
